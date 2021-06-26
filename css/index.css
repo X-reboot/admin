@@ -1,0 +1,150 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #FFC700;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a 
+{
+    text-decoration: none;
+    color: #1E1E23;
+    opacity: 1;
+    font-size: 1.2em;
+    font-weight: 400;
+    transition: 200ms;   
+}
+
+a:hover
+{
+    opacity: 0.5;
+}
+
+nav ul
+{
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li 
+{
+    position: relative;
+    left: 10%;
+    margin-top: 20px;
+}
+
+nav
+{
+    background-color: #1E1E23;
+    height: 65px;
+}
+
+.active
+{
+    border-bottom: 2px solid skyblue;
+    width: 100%;
+}
+
+h4
+{
+    text-align: center;
+    color: skyblue;
+    transform: translateY(-20px);
+    margin-right: 10px;
+}
+
+
+#menu-toggle
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 25px;
+
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menu-toggle input
+{
+    display: flex;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+} 
+
+#menu-toggle span
+{
+    display: flex;
+    width: 29px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    left: 1%;
+    background: skyblue;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+}
+
+#menu-toggle span:first-child
+{
+    transform-origin: 0% 0%;
+}
+
+#menu-toggle span:nth-last-child(2)
+{
+    transform-origin: 0% 100%;
+}
+
+#menu-toggle input:checked ~ span
+{
+    opacity: 1;
+    transform: rotate(45deg) translate(-3px, -1px);
+    background: #36383F;
+}
+
+#menu-toggle input:checked ~ span:nth-last-child(3)
+{
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2 0.2);
+}
+
+#menu-toggle input:checked ~ span:nth-last-child(2)
+{
+    transform: rotate(-45deg) translate(0px, -1px);
+}
+
+#menu
+{
+    position: absolute;
+    width: 180px;
+   
+    box-shadow: 5px 10px 15px rgb(185, 184, 184);
+    margin: -50px 0px 0px -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background-color: #F5F6FA;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li
+{
+    padding: 10px 0px;
+    transition-delay: 2s;
+}
+
+#menu-toggle input:checked ~ ul
+{
+    transform: none;
+} 
